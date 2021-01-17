@@ -62,23 +62,93 @@ func (s *SetDatatype) SetNFTMagic(nftMagic uint32) {
 var (
 	TypeInvalid     = SetDatatype{Name: "invalid", nftMagic: 0}
 	TypeVerdict     = SetDatatype{Name: "verdict", Bytes: 0, nftMagic: 1}
+	TypeNFProto     = SetDatatype{Name: "nfproto", Bytes: 1, nftMagic: 2}
+	TypeBitmask     = SetDatatype{Name: "bitmask", nftMagic: 3} // TODO
 	TypeInteger     = SetDatatype{Name: "integer", Bytes: 4, nftMagic: 4}
+	TypeString      = SetDatatype{Name: "string", nftMagic: 5} // TODO
+	TypeLLAddr      = SetDatatype{Name: "lladdr", nftMagic: 6} // TODO
 	TypeIPAddr      = SetDatatype{Name: "ipv4_addr", Bytes: 4, nftMagic: 7}
 	TypeIP6Addr     = SetDatatype{Name: "ipv6_addr", Bytes: 16, nftMagic: 8}
 	TypeEtherAddr   = SetDatatype{Name: "ether_addr", Bytes: 6, nftMagic: 9}
+	TypeEtherType   = SetDatatype{Name: "ether_type", nftMagic: 10} // TODO
+	TypeARPOP       = SetDatatype{Name: "arp_op", nftMagic: 11}     // TODO
 	TypeInetProto   = SetDatatype{Name: "inet_proto", Bytes: 1, nftMagic: 12}
 	TypeInetService = SetDatatype{Name: "inet_service", Bytes: 2, nftMagic: 13}
+	TypeICMPType    = SetDatatype{Name: "icmp_type", nftMagic: 14}     // TODO
+	TypeTCPFlag     = SetDatatype{Name: "tcp_flag", nftMagic: 15}      // TODO
+	TypeDCCPPktType = SetDatatype{Name: "dccp_pkt_type", nftMagic: 16} // TODO
+	TypeMHType      = SetDatatype{Name: "mh_type", Bytes: 1, nftMagic: 17}
+	TypeTime        = SetDatatype{Name: "time", Bytes: 8, nftMagic: 18}
 	TypeMark        = SetDatatype{Name: "mark", Bytes: 4, nftMagic: 19}
+	TypeIFIndex     = SetDatatype{Name: "if_index", nftMagic: 20} // TODO
+	TypeARPHRD      = SetDatatype{Name: "arp_hrd", nftMagic: 21}  // TODO
+	TypeRealm       = SetDatatype{Name: "realm", nftMagic: 22}    // TODO
+	TypeClassID     = SetDatatype{Name: "class_id", nftMagic: 23} // TODO
+	TypeUID         = SetDatatype{Name: "uid", nftMagic: 24}      // TODO
+	TypeGID         = SetDatatype{Name: "gid", nftMagic: 25}      // TODO
+	TypeCTState     = SetDatatype{Name: "ct_state", Bytes: 4, nftMagic: 26}
+	TypeCTDir       = SetDatatype{Name: "ct_dir", Bytes: 1, nftMagic: 27}
+	TypeCTStatus    = SetDatatype{Name: "ct_status", Bytes: 4, nftMagic: 28}
+	TypeICMP6Type   = SetDatatype{Name: "icmp6_type", nftMagic: 29} // TODO
+	TypePktType     = SetDatatype{Name: "pkt_type", nftMagic: 30}   // TODO
+	TypeICMPCode    = SetDatatype{Name: "icmp_code", Bytes: 1, nftMagic: 31}
+	TypeICMPv6Code  = SetDatatype{Name: "icmpv6_code", Bytes: 1, nftMagic: 32}
+	TypeICMPxCode   = SetDatatype{Name: "icmpx_code", Bytes: 1, nftMagic: 33}
+	TypeDevGroup    = SetDatatype{Name: "dev_group", nftMagic: 34}         // TODO
+	TypeDSCP        = SetDatatype{Name: "dscp", nftMagic: 35}              // TODO
+	TypeECN         = SetDatatype{Name: "ecn", nftMagic: 36}               // TODO
+	TypeFIBAddr     = SetDatatype{Name: "fib_addr", nftMagic: 37}          // TODO
+	TypeBoolean     = SetDatatype{Name: "boolean", Bytes: 1, nftMagic: 38} // Size is actually only 1 bit
+	TypeIFName      = SetDatatype{Name: "if_name", nftMagic: 39}           // TODO
+	TypeIGMPType    = SetDatatype{Name: "igmp_type", nftMagic: 40}         // TODO
+	TypeTimeDate    = SetDatatype{Name: "time_date", nftMagic: 41}         // TODO
+	TypeTimeHour    = SetDatatype{Name: "time_hour", nftMagic: 42}         // TODO
+	TypeTimeDay     = SetDatatype{Name: "time_day", nftMagic: 43}          // TODO
 
 	nftDatatypes = []SetDatatype{
 		TypeVerdict,
+		TypeNFProto,
+		TypeBitmask,
 		TypeInteger,
+		TypeString,
+		TypeLLAddr,
 		TypeIPAddr,
 		TypeIP6Addr,
 		TypeEtherAddr,
+		TypeEtherType,
+		TypeARPOP,
 		TypeInetProto,
 		TypeInetService,
+		TypeICMPType,
+		TypeTCPFlag,
+		TypeDCCPPktType,
+		TypeMHType,
+		TypeTime,
 		TypeMark,
+		TypeIFIndex,
+		TypeARPHRD,
+		TypeRealm,
+		TypeClassID,
+		TypeUID,
+		TypeGID,
+		TypeCTState,
+		TypeCTDir,
+		TypeCTStatus,
+		TypeICMP6Type,
+		TypePktType,
+		TypeICMPCode,
+		TypeICMPv6Code,
+		TypeICMPxCode,
+		TypeDevGroup,
+		TypeDSCP,
+		TypeECN,
+		TypeFIBAddr,
+		TypeBoolean,
+		TypeIFName,
+		TypeIGMPType,
+		TypeTimeDate,
+		TypeTimeHour,
+		TypeTimeDay,
 	}
 )
 
