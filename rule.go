@@ -90,7 +90,6 @@ func (cc *Conn) GetRule(t *Table, c *Chain) ([]*Rule, error) {
 	return rules, nil
 }
 
-// AddRule adds the specified Rule
 func (cc *Conn) newRule(r *Rule, op ruleOperation) *Rule {
 	cc.Lock()
 	defer cc.Unlock()
@@ -153,10 +152,12 @@ func (cc *Conn) newRule(r *Rule, op ruleOperation) *Rule {
 	return r
 }
 
+// ReplaceRule replaces the specified rule
 func (cc *Conn) ReplaceRule(r *Rule) *Rule {
 	return cc.newRule(r, operationReplace)
 }
 
+// AddRule adds the specified Rule
 func (cc *Conn) AddRule(r *Rule) *Rule {
 	if r.Handle != 0 {
 		return cc.newRule(r, operationReplace)
@@ -165,6 +166,7 @@ func (cc *Conn) AddRule(r *Rule) *Rule {
 	return cc.newRule(r, operationAdd)
 }
 
+// InsertRule inserts the specified Rule
 func (cc *Conn) InsertRule(r *Rule) *Rule {
 	if r.Handle != 0 {
 		return cc.newRule(r, operationReplace)
